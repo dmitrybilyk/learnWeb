@@ -6,10 +6,53 @@
     <servlet>
         <servlet-name>LenaServlet</servlet-name>
         <servlet-class>com.lena.servlets.LenaServlet</servlet-class>
+        <init-param>
+            <param-name>dima</param-name>
+            <param-value>Dimon</param-value>
+        </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.lena.servlets.MyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyController</servlet-name>
+        <servlet-class>com.lena.servlets.MyController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HtmlServlet</servlet-name>
+        <servlet-class>com.lena.servlets.HtmlServlet</servlet-class>
+        <init-param>
+            <param-name>dima</param-name>
+            <param-value>Dimon</param-value>
+        </init-param>
+    </servlet>
+
+    <welcome-file-list>
+        <welcome-file>index2.jsp</welcome-file>
+    </welcome-file-list>
 
     <servlet-mapping>
         <servlet-name>LenaServlet</servlet-name>
         <url-pattern>/lenaTest</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HtmlServlet</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MyController</servlet-name>
+        <url-pattern>/myController</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_404.jsp</location>
+    </error-page>
 </web-app>
