@@ -1,0 +1,15 @@
+<project name="myEcho" default="setProperies">
+    <!--<target name="printMessage">-->
+       <!--<echo message="Mama, podnimi"/>-->
+    <!--</target>-->
+    <target name="setProperies">
+        <property name="lena" value="Lenusya"/>
+        <property name="dima" value="Dima"/>
+    </target>
+    <target name="echoProps" depends="setProperies">
+        <echo message="Lena = ${lena}"/>
+        <echo message="Lena = ${os.name}"/>
+        <echo message="Lena = ${java.home}"/>
+        <echo message="Lena = ${basedir}"/>
+    </target>
+</project>

@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <context-param>
+        <param-name>fileName</param-name>
+        <param-value>WEB-INF/Includedjsp.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>LenaServlet</servlet-name>
         <servlet-class>com.lena.servlets.LenaServlet</servlet-class>
@@ -14,6 +19,14 @@
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>com.lena.servlets.MyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ToChangeServlet</servlet-name>
+        <servlet-class>com.lena.servlets.ChangeQueryStringServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Copyright</servlet-name>
+        <servlet-class>com.lena.servlets.CopyrightServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MyController</servlet-name>
@@ -39,13 +52,33 @@
 
     <servlet-mapping>
         <servlet-name>HtmlServlet</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/getParams</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>MyController</servlet-name>
         <url-pattern>/myController</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Copyright</servlet-name>
+        <url-pattern>/copyright</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ToChangeServlet</servlet-name>
+        <url-pattern>/changeServlet</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CustomFilter</filter-name>
+        <filter-class>com.lena.filters.CustomFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CustomFilter</filter-name>
+        <servlet-name>LenaServlet</servlet-name>
+    </filter-mapping>
 
     <session-config>
         <session-timeout>1</session-timeout>
