@@ -16,9 +16,9 @@
   <body>
 
 
-  <jsp:forward page="viewParams.jsp">
-      <%--<jsp:param name="another" value="dfdfdf"/>--%>
-  </jsp:forward>
+  <%--<jsp:forward page="viewParams.jsp">--%>
+      <%--&lt;%&ndash;<jsp:param name="another" value="dfdfdf"/>&ndash;%&gt;--%>
+  <%--</jsp:forward>--%>
 
   <p>
       <a href="/lena/changeServlet">To change servlet</a>
@@ -76,6 +76,11 @@
   </form>
   <%--<jsp:include page="WEB-INF/IncludedJsp.jsp" />--%>
     <%--<c:import url="https://sportarena.com/football/upl/paulino-pokinet-zaryu-v-kontse-goda-na-pravah/" />--%>
+
+  <form enctype="multipart/form-data" action="/lena/testUpload" method="post">
+      <input name="file" type="file">
+      <input type="submit" value="Uppload"/>
+  </form>
 
   <%
       ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");

@@ -25,6 +25,10 @@
         <servlet-class>com.lena.servlets.ChangeQueryStringServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LenaUpload</servlet-name>
+        <servlet-class>com.lena.servlets.LenaTestUploadServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Copyright</servlet-name>
         <servlet-class>com.lena.servlets.CopyrightServlet</servlet-class>
     </servlet>
@@ -68,6 +72,11 @@
     <servlet-mapping>
         <servlet-name>ToChangeServlet</servlet-name>
         <url-pattern>/changeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LenaUpload</servlet-name>
+        <url-pattern>/testUpload</url-pattern>
     </servlet-mapping>
 
     <filter>
