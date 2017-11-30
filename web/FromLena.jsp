@@ -15,10 +15,6 @@
   <%--</p>--%>
 </head>
 <body>
-<p>
-   <%=session.getAttribute("name")%>
-   <%=request.getAttribute("name")%>
-   <%=request.getParameter("name")%>
-</p>
+<%=session.getAttribute("sesAttr")%> in from Lena
 </body>
 </html>

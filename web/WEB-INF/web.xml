@@ -29,6 +29,10 @@
         <servlet-class>com.lena.servlets.LenaTestUploadServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LenaUploadServlet</servlet-name>
+        <servlet-class>com.lena.servlets.UploadServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Copyright</servlet-name>
         <servlet-class>com.lena.servlets.CopyrightServlet</servlet-class>
     </servlet>
@@ -75,6 +79,11 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>LenaUploadServlet</servlet-name>
+        <url-pattern>/uploadFile</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>LenaUpload</servlet-name>
         <url-pattern>/testUpload</url-pattern>
     </servlet-mapping>
@@ -97,4 +106,17 @@
         <error-code>404</error-code>
         <location>/error_404.jsp</location>
     </error-page>
+    <error-page>
+        <error-code>406</error-code>
+        <location>/forNull.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/error_401.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/forNull.jsp</location>
+    </error-page>
+
 </web-app>
