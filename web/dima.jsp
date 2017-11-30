@@ -1,3 +1,4 @@
+<%@ page import="java.util.Enumeration" %>
 <%--
   Created by IntelliJ IDEA.
   User: dmitry
@@ -10,53 +11,37 @@
 <jsp:useBean id="date" class="java.util.Date" />
 <html>
   <head>
-    <title>Lenaaa</title>
+    <title>Dima.jsp</title>
   </head>
   <body>
-      Lena's body
-      <p>
-        <a href="/lena/lenaTest">lenaTest</a>
-      </p>
-      <p>
-          <a href="lenaaa.html">to normal Lena html</a>
-      </p>
-      <p>
-          <a href="/Dima">Dima</a>
-      </p>
-      <p>
-          <c:out value="${date}"/>
-      </p>
+  <jsp:useBean id="ruslanObject" class="com.lena.model.Ruslan">
+      <jsp:setProperty name="ruslanObject" property="*"/>
+  </jsp:useBean>
+      <%--<c:forEach var="parameter" items="${param}">--%>
+          <%--<c:out value="${parameter.value}"/><br>--%>
+      <%--</c:forEach>--%>
 
-  <form action="/lena/lenaTest" method="post">
-      <table>
-          <tr>
-              <td>
-                  Name:
-              </td>
-              <td>
-                  <input type="text" name="myCookie">
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  Name:
-              </td>
-              <td>
-                  <input type="text" name="nameKey">
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  Surname:
-              </td>
-              <td>
-                  <input type="text" name="surNameKey">
-              </td>
-          </tr>
-      </table>
-      <input type="submit" value="Send name and surname">
-  </form>
+  <br>
+  name <c:out value="${ruslanObject.hisName}"/> <br>
+  surname <c:out value="${ruslanObject.hisSurName}"/>
 
+  <c:set var="isValueValid" value="${ruslanObject.valid}"/>
+  <c:out value="${ruslanObject.valid}"/>
+  <c:if test="${isValueValid}">
+      <c:set var="name" value="${ruslanObject.hisName}" scope="session"/>
+      <c:set var="surName" value="${ruslanObject.hisSurName}" scope="session"/>
+  </c:if>
+  <br><br>
+  <a href="FromLena.jsp"> To From Lena jsp</a>
+  <%--<%--%>
+      <%--while(request.getParameterNames().hasMoreElements()) {--%>
+          <%--String value = request.getParameterNames().nextElement();--%>
+          <%--%>--%>
+      <%--<p>'<%=value%>'</p> <br>--%>
+      <%--<%--%>
+      <%--}--%>
 
+  <%--%>--%>
+  <%--<c:out value="${param.nameKey}"/>--%>
   </body>
 </html>

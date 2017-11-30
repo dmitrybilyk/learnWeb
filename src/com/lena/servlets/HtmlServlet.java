@@ -21,11 +21,12 @@ public class HtmlServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String myCookie = req.getParameter("myCookie");
-        if (myCookie != null) {
-            Cookie cookie = new Cookie("myCoooookie", myCookie);
-            resp.addCookie(cookie);
-        }
+        String gdg = "dfd";
+//        String myCookie = req.getParameter("myCookie");
+//        if (myCookie != null) {
+//            Cookie cookie = new Cookie("myCoooookie", myCookie);
+//            resp.addCookie(cookie);
+//        }
     }
 
     @Override

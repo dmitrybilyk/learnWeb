@@ -1,3 +1,4 @@
+<%@ page import="java.util.ResourceBundle" %>
 <%--
   Created by IntelliJ IDEA.
   User: dmitry
@@ -13,9 +14,26 @@
     <title>Lenaaa</title>
   </head>
   <body>
+
+
+  <%--<jsp:forward page="viewParams.jsp">--%>
+      <%--&lt;%&ndash;<jsp:param name="another" value="dfdfdf"/>&ndash;%&gt;--%>
+  <%--</jsp:forward>--%>
+
+  <p>
+      <a href="/lena/changeServlet">To change servlet</a>
+  </p>
+
+
       Lena's body
       <p>
-        <a href="/lena/lenaTest">lenaTest</a>
+        <a href="/lena/lenaTest?someParam=SomeValue">lenaTest777777</a>
+      </p>
+      <p>
+        <a href="FromLena.jsp">To From Lena jsp</a>
+      </p>
+      <p>
+        <a href="someFormForIncl.jsp">To Some Fomr For Incl</a>
       </p>
       <p>
         <a href="/lena/myController">to my controller</a>
@@ -24,35 +42,25 @@
           <a href="dima.jsp">to Lena html</a>
       </p>
       <p>
-          <a href="/lena/dima">Dima</a>
-      </p>
-      <p>
-          <a href="/lena/dima2">Dima2Servlet</a>
-      </p>
-      <p>
-          <a href="/lena/adduserform">AddUser</a>
-      </p>
-      <p>
           <c:out value="${date}"/>
       </p>
-
-
-  <form action="/lena/lenaTest" method="post">
+      <%--<%@include file="WEB-INF/IncludedJsp.jsp" %>--%>
+  <form action="dima.jsp" method="get">
       <table>
+          <%--<tr>--%>
+              <%--<td>--%>
+                  <%--Name:--%>
+              <%--</td>--%>
+              <%--<td>--%>
+                  <%--<input type="text" name="myCookie">--%>
+              <%--</td>--%>
+          <%--</tr>--%>
           <tr>
               <td>
                   Name:
               </td>
               <td>
-                  <input type="text" name="myCookie">
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  Name:
-              </td>
-              <td>
-                  <input type="text" name="nameKey">
+                  <input type="text" name="hisName">
               </td>
           </tr>
           <tr>
@@ -60,18 +68,28 @@
                   Surname:
               </td>
               <td>
-                  <input type="text" name="surNameKey">
+                  <input type="text" name="hisSurName">
               </td>
           </tr>
       </table>
       <input type="submit" value="Send name and surname">
   </form>
+  <%--<jsp:include page="WEB-INF/IncludedJsp.jsp" />--%>
+    <%--<c:import url="https://sportarena.com/football/upl/paulino-pokinet-zaryu-v-kontse-goda-na-pravah/" />--%>
 
-      <% if (request.getParameter("nameKey") != null) { %>
-      <p>
-          <%= request.getParameter("nameKey") %>
-      </p>
-      <% else} %>
+  <form enctype="multipart/form-data" action="/lena/testUpload" method="post">
+      <input name="file" type="file">
+      <input type="submit" value="Uppload"/>
+  </form>
+
+  <%
+      ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");
+      String fileName2 = bundle.getString("fileName");
+  %>
+
+      <%=fileName2%>
+    <%--<jsp:include page="<%=fileName2%>"/>--%>
+    <%--<jsp:include page='<%=application.getInitParameter("fileName")%>'/>--%>
 
   </body>
 </html>
