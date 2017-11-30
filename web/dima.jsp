@@ -21,6 +21,9 @@
           <a href="lenaaa.html">to normal Lena html</a>
       </p>
       <p>
+          <a href="/Dima">Dima</a>
+      </p>
+      <p>
           <c:out value="${date}"/>
       </p>
 

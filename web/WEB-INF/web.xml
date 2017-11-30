@@ -27,6 +27,18 @@
             <param-value>Dimon</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>DimaServlet</servlet-name>
+        <servlet-class>com.lena.servlets.DimaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Dima2Servlet</servlet-name>
+        <servlet-class>com.lena.servlets.Dima2Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddUserServlet</servlet-name>
+        <servlet-class>com.lena.servlets.AddUserServlet</servlet-class>
+    </servlet>
 
     <welcome-file-list>
         <welcome-file>index2.jsp</welcome-file>
@@ -45,6 +57,21 @@
     <servlet-mapping>
         <servlet-name>MyController</servlet-name>
         <url-pattern>/myController</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DimaServlet</servlet-name>
+        <url-pattern>/dima</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Dima2Servlet</servlet-name>
+        <url-pattern>/dima2</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AddUserServlet</servlet-name>
+        <url-pattern>/adduserform</url-pattern>
     </servlet-mapping>
 
     <session-config>

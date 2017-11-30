@@ -24,8 +24,18 @@
           <a href="dima.jsp">to Lena html</a>
       </p>
       <p>
+          <a href="/lena/dima">Dima</a>
+      </p>
+      <p>
+          <a href="/lena/dima2">Dima2Servlet</a>
+      </p>
+      <p>
+          <a href="/lena/adduserform">AddUser</a>
+      </p>
+      <p>
           <c:out value="${date}"/>
       </p>
+
 
   <form action="/lena/lenaTest" method="post">
       <table>
@@ -57,6 +67,11 @@
       <input type="submit" value="Send name and surname">
   </form>
 
+      <% if (request.getParameter("nameKey") != null) { %>
+      <p>
+          <%= request.getParameter("nameKey") %>
+      </p>
+      <% else} %>
 
   </body>
 </html>
