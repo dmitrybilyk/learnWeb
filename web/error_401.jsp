@@ -5,12 +5,15 @@
   Time: 11:22
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page isErrorPage="true"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <html>
 <head>
-    <title>errr</title>
+    <title>401</title>
 </head>
 <body>
-    404 error 787876
+    ghghghggh 777 401
+<c:out value="${requestScope['javax.servlet.error.servlet_name']}" />
 </body>
 </html>

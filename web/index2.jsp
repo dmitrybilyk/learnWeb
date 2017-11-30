@@ -9,13 +9,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <jsp:useBean id="date" class="java.util.Date" />
+
+<%! private int r = 10;
+
+    public void setS() {
+
+    }
+%>
+
 <html>
   <head>
     <title>Lenaaa</title>
   </head>
-  <body>
+  <>
 
+  <c:choose>
+      <c:when test="${empty cookie}">
+          <h2>No cookies</h2>
+      </c:when>
+      <c:otherwise>
+          <c:forEach var="oneCookie" items="${cookie}" >
+              ${oneCookie.key}
+              ${oneCookie.value.value}
+          </c:forEach>
+      </c:otherwise>
+  </c:choose>
 
+  <c:if test="${param.paramm}">
+      <%
+          response.sendError(401, "401 errrrror");
+      %>
+  </c:if>
   <%--<jsp:forward page="viewParams.jsp">--%>
       <%--&lt;%&ndash;<jsp:param name="another" value="dfdfdf"/>&ndash;%&gt;--%>
   <%--</jsp:forward>--%>
@@ -24,8 +48,12 @@
       <a href="/lena/changeServlet">To change servlet</a>
   </p>
 
-
+<c:url var="myCurl" value="/cookieTest?par=papar"/>
       Lena's body
+      <p>
+        <a href="${myCurl}">To cookie</a>
+        <%--<a href="/lena/cookieTest?par=paparrrrr">To cookie</a>--%>
+      </p>
       <p>
         <a href="/lena/lenaTest?someParam=SomeValue">lenaTest777777</a>
       </p>
@@ -77,17 +105,24 @@
   <%--<jsp:include page="WEB-INF/IncludedJsp.jsp" />--%>
     <%--<c:import url="https://sportarena.com/football/upl/paulino-pokinet-zaryu-v-kontse-goda-na-pravah/" />--%>
 
-  <form enctype="multipart/form-data" action="/lena/testUpload" method="post">
+  <form enctype="multipart/form-data" action="/lena/uploadFile" method="post">
       <input name="file" type="file">
       <input type="submit" value="Uppload"/>
   </form>
+
+  <% if (Math.random() < 0.5) { %>
+  <B>Удачного</B> Вам дня!
+  <% } else { %>
+  <B>Не удачного</B> Вам дня!
+  <% } %>
 
   <%
       ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");
       String fileName2 = bundle.getString("fileName");
   %>
 
-      <%=fileName2%>
+      <%--<%=fileName2%>--%>
+      <%out.append("dfdfd");%>
     <%--<jsp:include page="<%=fileName2%>"/>--%>
     <%--<jsp:include page='<%=application.getInitParameter("fileName")%>'/>--%>
 
