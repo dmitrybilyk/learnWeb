@@ -10,10 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
 import javax.servlet.*;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -74,6 +71,8 @@ public class LenaServlet extends HttpServlet {
 //
 //        RequestDispatcher requestDispatcher = req.getRequestDispatcher("IncludedJsp.jsp");
 //        requestDispatcher.include(req, resp);
+        HttpSession session = req.getSession();
+        session.setAttribute("attr", "newAttrib");
 
     }
 }
