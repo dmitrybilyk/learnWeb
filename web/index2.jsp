@@ -56,8 +56,12 @@
         <a href="${myCurl}">To cookie</a>
         <%--<a href="/lena/cookieTest?par=paparrrrr">To cookie</a>--%>
       </p>
-      <p id="lenaTestId" onclick="openShahkar()">
-        <a href="#">lenaTest777777</a>
+  <p>
+      <a href="${myCurl}">To cookie</a>
+      <%--<a href="/lena/cookieTest?par=paparrrrr">To cookie</a>--%>
+  </p>
+      <p>
+        <a href="/lena/downloadFile">Download file</a>
       </p>
   <%--<script>--%>
       <%--function myFunction(p1, p2) {--%>
@@ -124,10 +128,10 @@
   <B>Не удачного</B> Вам дня!
   <% } %>
 
-  <%
-      ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");
-      String fileName2 = bundle.getString("fileName");
-  %>
+  <%--<%--%>
+      <%--ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");--%>
+      <%--String fileName2 = bundle.getString("fileName");--%>
+  <%--%>--%>
 
       <%--<%=fileName2%>--%>
       <%out.append("dfdfd");%>
