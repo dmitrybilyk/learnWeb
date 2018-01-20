@@ -50,7 +50,7 @@
     </servlet>
 
     <welcome-file-list>
-        <welcome-file>index2.jsp</welcome-file>
+        <welcome-file>firstJSP.jsp</welcome-file>
     </welcome-file-list>
 
     <servlet-mapping>
