@@ -19,6 +19,8 @@
 
 <html>
   <head>
+      <script src="js/lena.js" ></script>
+      <jsp:include page="jspWithJavaScript.jsp" />
     <title>Lenaaa</title>
   </head>
   <>
@@ -54,9 +56,19 @@
         <a href="${myCurl}">To cookie</a>
         <%--<a href="/lena/cookieTest?par=paparrrrr">To cookie</a>--%>
       </p>
+  <p>
+      <a href="${myCurl}">To cookie</a>
+      <%--<a href="/lena/cookieTest?par=paparrrrr">To cookie</a>--%>
+  </p>
       <p>
-        <a href="/lena/lenaTest?someParam=SomeValue">lenaTest777777</a>
+        <a href="/lena/downloadFile">Download file</a>
       </p>
+  <%--<script>--%>
+      <%--function myFunction(p1, p2) {--%>
+          <%--return p1 * p2;--%>
+      <%--}--%>
+      <%--document.getElementById("lenaTestId").innerHTML = myFunction(4, 3);--%>
+  <%--</script>--%>
       <p>
         <a href="FromLena.jsp">To From Lena jsp</a>
       </p>
@@ -73,7 +85,7 @@
           <c:out value="${date}"/>
       </p>
       <%--<%@include file="WEB-INF/IncludedJsp.jsp" %>--%>
-  <form action="dima.jsp" method="get">
+  <form action="dima.jsp" method="get" onsubmit="return validateForm(this)">
       <table>
           <%--<tr>--%>
               <%--<td>--%>
@@ -116,10 +128,10 @@
   <B>Не удачного</B> Вам дня!
   <% } %>
 
-  <%
-      ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");
-      String fileName2 = bundle.getString("fileName");
-  %>
+  <%--<%--%>
+      <%--ResourceBundle bundle = ResourceBundle.getBundle("com.lena.servlets.include");--%>
+      <%--String fileName2 = bundle.getString("fileName");--%>
+  <%--%>--%>
 
       <%--<%=fileName2%>--%>
       <%out.append("dfdfd");%>
